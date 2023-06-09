@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import Logo from "./Assets/Logo.svg";
+import Logo from "../Assets/Logo.svg";
 
 import { BsCart2} from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2"
@@ -13,7 +13,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-// import Divider from "@mui/material/Divider";
+
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
@@ -68,18 +68,24 @@ const Navbar = () => {
           role="presentation"
           onClick={()=> setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
-        > 
+          
+        >
+         
         <List>
+          
            {menuOptions.map((item) => (
-             <ListItem key={item.text} disablePadding>
+          
+             <ListItem key={item.text} >
+              
                <ListItemIcon>
                  <ListItemIcon>{item.icon}</ListItemIcon>
                  <ListItemText primary={item.text}/>
                </ListItemIcon>
+               
              </ListItem>
            ))}
         </List>
-        
+         
         </Box>
       </Drawer>
     </nav>
